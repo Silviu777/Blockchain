@@ -15,7 +15,7 @@ class BlockChainGenerator():
         self.HandleJson()
         self.AddBlock("GENESIS BLOCK") if self.BlockChain == [] else None
 
-
+    # Creating the .json file
     def HandleJson(self):
         if not self.newChain:
             try:
@@ -25,7 +25,7 @@ class BlockChainGenerator():
                 print(f"Error: {e}")
 
 
-    # Create block
+    # Creating the block
     def CreateBlock(self, data):
         block = {}
         block["data"] = data
@@ -48,7 +48,7 @@ class BlockChainGenerator():
                 return hash, nounce
 
 
-    # add block to BlockChain
+    # Adding a block to BlockChain
     def AddBlock(self, data):
         self.BlockChain = [self.CreateBlock(data)] + self.BlockChain
 
@@ -56,7 +56,7 @@ class BlockChainGenerator():
             json.dump(self.BlockChain, f)
 
 
-# ---------------------------------------------------
+# -------------------------------------------------------------------
 
 BlockChainFileName = "BlockChain.json"
 Transaction = BlockChainGenerator(BlockChainFileName, newChain=False, difficultyLevel=3)

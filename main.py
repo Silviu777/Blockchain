@@ -45,7 +45,7 @@ class BlockChainGenerator():
             nounce = str(randint(0, 1E10))
             hash = sha256(str(dataString + nounce).encode()).hexdigest()
             if hash[:self.difficultyLevel] == "0" * self.difficultyLevel:
-                return hash, nounce
+                
 
 
     # Adding a block to BlockChain

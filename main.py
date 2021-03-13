@@ -1,5 +1,5 @@
 import os
-from hashlib import sha25
+from hashlib import sha256
 from random import randint
 from datetime import datetime
 import json
